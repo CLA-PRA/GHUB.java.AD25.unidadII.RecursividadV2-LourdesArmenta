@@ -4,27 +4,21 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Clase de utilidades para operaciones comunes relacionadas con estudiantes.
+ * Proporciona métodos para leer datos de estudiantes desde archivos.
+ */
 public class Utilidades {
+    /**
+     * Lee los datos de estudiantes desde un archivo de texto y los almacena en un arreglo.
+     * Cada línea del archivo debe tener el formato:
+     * numControl,nombre,carrera,fechaNacimiento,edad
+     *
+     * @param rutaArchivo Ruta del archivo de texto con los datos de los estudiantes.
+     * @return Un arreglo de objetos Estudiante con los datos leídos. El tamaño máximo es 100.
+     */
     public static Estudiante[] leerEstudiantesDeArchivo(String rutaArchivo) {
-        Estudiante[] estudiantes = new Estudiante[100]; // Asumiendo 100 registros
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
-            String linea;
-            int i = 0;
-            while ((linea = br.readLine()) != null && i < estudiantes.length) {
-                String[] partes = linea.split(",");
-                if (partes.length == 5) {
-                    String numContro = partes[0];
-                    String nombre = partes[1];
-                    String carrera = partes[2];
-                    Fecha fechaNacimiento = new Fecha(partes[3]);
-                    int edad = Integer.parseInt(partes[4]);
-                    estudiantes[i] = new Estudiante(numContro, nombre, carrera, fechaNacimiento, edad);
-                    i++;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    //coloca el código faltante
         return estudiantes;
     }
 }

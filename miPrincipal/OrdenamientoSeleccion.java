@@ -1,53 +1,7 @@
 package miPrincipal;
 
 public class OrdenamientoSeleccion<T> {
-    // Método de ordenamiento por selección recursivo genérico
-    public void ordenarSeleccionRecursivo(T[] arreglo, Comparador<T> comparador) {
-        contadorRecursivo = 0;
-        ordenarSeleccionRecursivoAux(arreglo, comparador, 0);
-    }
-
-    private void ordenarSeleccionRecursivoAux(T[] arreglo, Comparador<T> comparador, int i) {
-        contadorRecursivo++;
-        if (i == arreglo.length - 1) {
-            return;
-        }
-        int minimo = i;
-        for (int j = i + 1; j < arreglo.length; j++) {
-            if (comparador.comparar(arreglo[j], arreglo[minimo]) < 0) {
-                minimo = j;
-            }
-        }
-        if (i != minimo) {
-            T aux = arreglo[i];
-            arreglo[i] = arreglo[minimo];
-            arreglo[minimo] = aux;
-        }
-        ordenarSeleccionRecursivoAux(arreglo, comparador, i + 1);
-    }
-    public static int contadorIterativo = 0;
-    public static int contadorRecursivo = 0;
-
-    // Método de ordenamiento por selección genérico
-    public void ordenarSeleccion(T[] arreglo, Comparador<T> comparador) {
-        contadorIterativo = 0;
-        for (int i = 0; i < arreglo.length - 1; i++) {
-            contadorIterativo++;
-            int minimo = i;
-            for (int j = i + 1; j < arreglo.length; j++) {
-                if (comparador.comparar(arreglo[j], arreglo[minimo]) < 0) {
-                    minimo = j;
-                }
-            }
-            if (i != minimo) {
-                T aux = arreglo[i];
-                arreglo[i] = arreglo[minimo];
-                arreglo[minimo] = aux;
-            }
-        }
-    }
-
-    //Métodos de prueba para enteror
+    
     public static void inicioEnteros(){
         // Ejemplo de selección de enteros con valores aleatorios
         int[] arreglo = {12, 5, 23, 8, 17, 3, 19, 10};
@@ -96,41 +50,6 @@ public class OrdenamientoSeleccion<T> {
     }
 
     // Métodos originales para enteros se mantienen para referencia
-    public static int[] ordenaSeleccion_iterativa(int[] arreglo) {
-        contadorIterativo = 0;
-        for (int i = 0; i < arreglo.length - 1; i++) {
-            contadorIterativo++;
-            int minimo = i;
-            for (int j = i + 1; j < arreglo.length; j++) {
-                if (arreglo[j] < arreglo[minimo]) {
-                    minimo = j;
-                }
-            }
-            if (i != minimo) {
-                int aux = arreglo[i];
-                arreglo[i] = arreglo[minimo];
-                arreglo[minimo] = aux;
-            }
-        }
-        return arreglo;
-    }
+    
 
-    public static int[] ordenaSeleccion_recursiva(int[] arreglo, int i) {
-        contadorRecursivo++;
-        if (i == arreglo.length - 1) {
-            return arreglo;
-        }
-        int minimo = i;
-        for (int j = i + 1; j < arreglo.length; j++) {
-            if (arreglo[j] < arreglo[minimo]) {
-                minimo = j;
-            }
-        }
-        if (i != minimo) {
-            int aux = arreglo[i];
-            arreglo[i] = arreglo[minimo];
-            arreglo[minimo] = aux;
-        }
-        return ordenaSeleccion_recursiva(arreglo, i + 1);
-    }
 }

@@ -16,11 +16,6 @@ public class BusquedaBinaria {
         } else {
             System.out.println("El valor se encuentra en la posición " + resultado);
         }
-
-
-
-
-
         resultado = busquedaBinaria_recursiva(arreglo, valor, 0, arreglo.length - 1);
         if (resultado == -1) {
             System.out.println("El valor no se encuentra en el arreglo");
@@ -29,43 +24,12 @@ public class BusquedaBinaria {
         }
     }
 
-    public static int busquedaBinaria_iterativa(int[] arreglo, int valor) {
-        int inicio = 0;
-        int fin = arreglo.length - 1;
-        while (inicio <= fin) {
-            int medio = (inicio + fin) / 2;
-            if (arreglo[medio] == valor) {
-                return medio;
-            } else if (arreglo[medio] < valor) {
-                inicio = medio + 1;
-            } else {
-                fin = medio - 1;
-            }
-        }
-        return -1;
-    }
-    public static int busquedaBinaria_recursiva(int[] arreglo, int valor, int inicio, int fin) {
-        if (inicio > fin) {
-            return -1;
-        }
-        int medio = (inicio + fin) / 2;
-        if (arreglo[medio] == valor) {
-            return medio;
-        } else if (arreglo[medio] < valor) {
-            return busquedaBinaria_recursiva(arreglo, valor, medio + 1, fin);
-        } else {
-            return busquedaBinaria_recursiva(arreglo, valor, inicio, medio - 1);
-        }
-    }
-    public static int busqueda_secuencial(int[] arreglo, int valor) {
-        for (int i = 0; i < arreglo.length; i++) {
-            if (arreglo[i] == valor) {
-                return i;
-            }else if(arreglo[i]>valor){
-                return -1;
-            }
-        }
-        return -1;
-    }
+    //coloca aqui el metodo busquedaBinaria_iterativa
+
+   //coloca aquí el método busquedaBinaria_recursiva
+
+   //coloca aquí el método busqueda_secuencial
+   
+    
 
 }
